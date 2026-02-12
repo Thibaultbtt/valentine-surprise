@@ -6,15 +6,15 @@ function App() {
   const [noButtonPosition, setNoButtonPosition] = useState({ left: 0, top: 0 });
 
   const images = [
-    '../public/1.jpg',
-    '../public/2.jpg',
-    '../public/3.jpg',
-    '../public/4.jpg',
-    '../public/5.jpg',
-    '../public/6.jpg',
-    '../public/7.jpg',
-    '../public/8.jpg',
-    '../public/9.jpg',
+  `${process.env.PUBLIC_URL}/1.jpg`,
+  `${process.env.PUBLIC_URL}/2.jpg`,
+  `${process.env.PUBLIC_URL}/3.jpg`,
+  `${process.env.PUBLIC_URL}/4.jpg`,
+  `${process.env.PUBLIC_URL}/5.jpg`,
+  `${process.env.PUBLIC_URL}/6.jpg`,
+  `${process.env.PUBLIC_URL}/7.jpg`,
+  `${process.env.PUBLIC_URL}/8.jpg`,
+  `${process.env.PUBLIC_URL}/9.jpg`,
   ];
 
   // Carousel automatique
