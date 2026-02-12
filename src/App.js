@@ -1,0 +1,145 @@
+import React, { useState, useEffect } from 'react';
+
+function App() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [noButtonPosition, setNoButtonPosition] = useState({ left: 0, top: 0 });
+
+  const images = [
+    'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800',
+    'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800',
+    'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800',
+    'https://images.unsplash.com/photo-1516589091380-5d8e87df6999?w=800'
+  ];
+
+  // Carousel automatique
+  useEffect(() => {
+    if (currentPage === 2) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      }, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [currentPage, images.length]);
+
+  // Effet de coeurs qui tombent
+  const createHearts = () => {
+    const heartsCount = 30;
+    for (let i = 0; i < heartsCount; i++) {
+      setTimeout(() => {
+        const heart = document.createElement('div');
+        heart.innerHTML = '❤️';
+        heart.className = 'falling-heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.fontSize = Math.random() * 30 + 20 + 'px';
+        heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+        heart.style.opacity = Math.random() * 0.5 + 0.5;
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+      }, i * 100);
+    }
+  };
+
+  const handleYesClick = () => {
+    setCurrentPage(3);
+    createHearts();
+  };
+
+  const handleNoHover = () => {
+    const randomX = (Math.random() - 0.5) * 300;
+    const randomY = (Math.random() - 0.5) * 200;
+    setNoButtonPosition({ left: randomX, top: randomY });
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  return (
+    <>
+      {/* Page 1: Surprise */}
+      {currentPage === 1 && (
+        <div className="page">
+          <div className="surprise-container">
+            <h1 className="surprise-title">J'ai quelque chose pour toi...</h1>
+            <button className="surprise-btn" onClick={() => setCurrentPage(2)}>
+              Clique ici 💝
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Page 2: Question */}
+      {currentPage === 2 && (
+        <div className="page page2">
+          <div className="carousel-container">
+            <div className="carousel">
+              {images.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`Photo ${index + 1}`}
+                  className={`carousel-image ${index === currentImageIndex ? 'active' : ''}`}
+                />
+              ))}
+            </div>
+            <button className="carousel-btn prev" onClick={prevImage}>
+              ❮
+            </button>
+            <button className="carousel-btn next" onClick={nextImage}>
+              ❯
+            </button>
+          </div>
+
+          <div className="message-container">
+            <p className="message">
+              Ces derniers moments passés ensemble ont été incroyables.
+              J'ai réalisé à quel point tu comptes pour moi et combien j'apprécie
+              chaque instant à tes côtés. Je voudrais que ce week-end soit spécial
+              pour nous deux...
+            </p>
+          </div>
+
+          <div className="question-container">
+            <h2 className="question">
+              Veux-tu essayer de construire quelque chose avec moi et passer ce
+              week-end de Saint-Valentin ensemble pour marquer ce tournant dans notre relation ?
+            </h2>
+            <div className="buttons-container">
+              <button className="answer-btn yes-btn" onClick={handleYesClick}>
+                Oui ❤️
+              </button>
+              <button
+                className="answer-btn no-btn"
+                onMouseEnter={handleNoHover}
+                style={{
+                  left: `${noButtonPosition.left}px`,
+                  top: `${noButtonPosition.top}px`
+                }}
+              >
+                Non
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Page 3: Message final */}
+      {currentPage === 3 && (
+        <div className="page">
+          <div className="final-container">
+            <h1 className="final-title">Je t'aime Chipy Sylvain ❤️</h1>
+            <p className="final-message">Merci de me faire confiance</p>
+            <p className="signature">Ton Boy 💕</p>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+export default App;
