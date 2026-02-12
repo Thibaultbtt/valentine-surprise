@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/valentine-surprise/static/css/main.6b557ab7.css",
-    "main.js": "/valentine-surprise/static/js/main.76349237.js",
+    "main.js": "/valentine-surprise/static/js/main.6231e8bf.js",
     "index.html": "/valentine-surprise/index.html",
     "main.6b557ab7.css.map": "/valentine-surprise/static/css/main.6b557ab7.css.map",
-    "main.76349237.js.map": "/valentine-surprise/static/js/main.76349237.js.map"
+    "main.6231e8bf.js.map": "/valentine-surprise/static/js/main.6231e8bf.js.map"
   },
   "entrypoints": [
     "static/css/main.6b557ab7.css",
-    "static/js/main.76349237.js"
+    "static/js/main.6231e8bf.js"
   ]
 }
