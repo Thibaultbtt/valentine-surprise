@@ -97,17 +97,20 @@ function App() {
 
           <div className="message-container">
             <p className="message">
-              Ces derniers moments passés ensemble ont été incroyables.
-              J'ai réalisé à quel point tu comptes pour moi et combien j'apprécie
-              chaque instant à tes côtés. Je voudrais que ce week-end soit spécial
-              pour nous deux...
+              Sylvain, je sais que tu as besoin de temps pour réfléchir aux évènements récents et je sais que ce n'est pas simple pour toi.
+              Tu es tout ce que j'ai de plus cher aujourd'hui et je n'imagine pas ma vie sans toi... Ce que l'on vit en ce moment est 
+              tout ce que j'ai rêvé et je ne m'imagine pas le faire avec quelqu'un d'autre que toi. Tu es l'homme de ma vie et je le ressens très sincèrement. 
+              Je suis prêt à ne plus jamais te manquer de respecte ou te mentir, être aussi droit que tu l'es et faire au mieux pour essayer de te rendre heureux.
+
+              C'est parce que je ressens tout cela pour toi que j'ai prévu ce week-end de saint valentin qui commence demain... 
+              J'aimerais pouvoir te montrer mion dévouement et mes sentiments pour toi dans les prochains jours si tu veux bien accepter mes regrets.
             </p>
           </div>
 
           <div className="question-container">
             <h2 className="question">
-              Veux-tu essayer de construire quelque chose avec moi et passer ce
-              week-end de Saint-Valentin ensemble pour marquer ce tournant dans notre relation ?
+              Veux-tu essayer de construire ton futur avec moi, me laisser une chance de me racheter et passer ce
+              week-end de Saint-Valentin ensemble ?
             </h2>
             <div className="buttons-container">
               <button className="answer-btn yes-btn" onClick={handleYesClick}>
