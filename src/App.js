@@ -6,10 +6,15 @@ function App() {
   const [noButtonPosition, setNoButtonPosition] = useState({ left: 0, top: 0 });
 
   const images = [
-    'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800',
-    'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800',
-    'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800',
-    'https://images.unsplash.com/photo-1516589091380-5d8e87df6999?w=800'
+    '../public/1.jpg',
+    '../public/2.jpg',
+    '../public/3.jpg',
+    '../public/4.jpg',
+    '../public/5.jpg',
+    '../public/6.jpg',
+    '../public/7.jpg',
+    '../public/8.jpg',
+    '../public/9.jpg',
   ];
 
   // Carousel automatique
