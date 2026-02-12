@@ -1,8 +1,8 @@
 {
-  "name": "chipy-boy",
+  "name": "valentine-surprise",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://Thibaultbtt.github.io/chipy-boy",
+  "homepage": "https://Thibaultbtt.github.io/valentine-surprise",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
